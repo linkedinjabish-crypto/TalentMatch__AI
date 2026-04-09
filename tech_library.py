@@ -78,7 +78,7 @@ SKILL_LIBRARY = {
         "knime", "rapidminer", "sas", "spss", "stata", "r", "julia", "matlab", "mathematica", "maple", "wolfram alpha", "dataiku", "databricks", "snowflake", "bigquery", "redshift", "synapse", "athena", "glue", "emr", "dataproc", "dataflow",
         "superset", "metabase", "redash", "grafana-loki", "kibana", "elastic-stack", "graylog", "fluent-bit", "vector-dev", "benthos", "airbyte", "fivetran", "meltano", "rudderstack", "segment", "mparticle", "snowplow", "heap", "mixpanel", "amplitude"
     ],
-    "AI / ML": [
+    "Machine Learning": [
         "machine learning", "deep learning", "nlp", "tensorflow", "pytorch", "scikit-learn", "opencv", "llm", "transformers", "langchain", "openai", "gpt", "bert", "rag",
         "generative ai", "agentic ai", "llamaindex", "pinecone", "stable diffusion", "midjourney", "mlops", "mlflow", "knowledge graphs", "langgraph", "dspy", "unstructured", "hugging face", "weights & biases", "comet ml", "neptune ai",
         "dvc", "pachyderm", "bentoml", "seldon", "kserve", "torchserve", "tensorrt", "onnx", "openvino", "tvm", "tpu", "cuda", "cudnn", "nccl", "megatron", "deepspeed", "adapter", "lora", "qlora", "quantization", "distillation", "pruning",

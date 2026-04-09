@@ -98,7 +98,7 @@ def rule_based_questions(jd_text):
     # 🧪 Logic: Categorize identified skills and map to question templates
     found_tech = []
     for cat, skills in SKILL_LIBRARY.items():
-        if cat in ["Backend Technologies", "Frontend Technologies", "Cloud Platforms", "DevOps & Tools", "Databases", "AI / ML"]:
+        if cat in ["Backend Technologies", "Frontend Technologies", "Cloud Platforms", "DevOps & Tools", "Databases", "Machine Learning"]:
             for s in skills:
                 if re.search(r'\b' + re.escape(s) + r'\b', t):
                     found_tech.append(s.title())
