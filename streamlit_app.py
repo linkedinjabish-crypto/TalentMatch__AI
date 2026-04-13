@@ -359,13 +359,13 @@ with st.sidebar:
     if st.button("🏠 Home Dashboard", use_container_width=True):
         st.session_state.page = "home"
         st.rerun()
-    if st.button("🔍 Smart Evaluation", use_container_width=True):
+    if st.button("🔍 AI Evaluation", use_container_width=True):
         st.session_state.page = "eval"
         st.rerun()
     if st.button("👥 Internal DB", use_container_width=True):
         st.session_state.page = "internal"
         st.rerun()
-    if st.button("📝 Interview Questions", use_container_width=True):
+    if st.button("📝 AI Interview Questions", use_container_width=True):
         st.session_state.page = "ai"
         st.rerun()
     if st.button("📚 Job Library", use_container_width=True):
