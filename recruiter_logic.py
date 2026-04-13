@@ -190,3 +190,22 @@ class InterviewGenerator:
         questions.append("Describe a major technical challenge you solved.")
 
         return questions
+
+
+# ================================
+# PUBLIC API FUNCTIONS
+# ================================
+
+def analyze_stability_score(resume: str) -> int:
+    """Analyze career stability from resume."""
+    return StabilityAnalyzer.analyze(resume)
+
+
+def analyze_career_growth(resume: str) -> int:
+    """Analyze career growth from resume."""
+    return GrowthAnalyzer.analyze(resume)
+
+
+def analyze_seniority_density(resume: str, jd: str) -> int:
+    """Analyze seniority match with job description."""
+    return SeniorityAnalyzer.analyze(resume, jd)
