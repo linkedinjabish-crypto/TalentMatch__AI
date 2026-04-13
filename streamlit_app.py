@@ -13,21 +13,14 @@ import random
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-import google.generativeai as genai
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from tech_library import SKILL_LIBRARY, PRO_VERBS, STOP_WORDS
 import recruiter_logic
 
 # ================= CONFIG =================
-# Offline Deterministic Keyword Engine Active + AI Enhancement Layer
+# Offline Deterministic Keyword Engine Active
 st.set_page_config(page_title="TalentMatch Pro", layout="wide")
-
-# AI Integration Layer
-if "GEMINI_API_KEY" in st.secrets:
-    genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-else:
-    st.warning("⚠️ GEMINI_API_KEY not found in secrets. AI features will be limited.")
  
 def cleanup_candidates():
     """Removes existing duplicates from the database keeping the most recent."""
