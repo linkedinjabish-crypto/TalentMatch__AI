@@ -175,6 +175,8 @@ footer {visibility: hidden;}
 # ================= LOGIN STATE =================
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
+if "sidebar_open" not in st.session_state:
+    st.session_state.sidebar_open = False
  
 # ================= LOGIN =================
 if not st.session_state.get('logged_in', False):
@@ -349,28 +351,34 @@ if not st.session_state.get('logged_in', False):
  
     st.stop()
    
+# ================= SIDEBAR TOGGLE =================
+if st.button("☰ Menu", use_container_width=False, key="sidebar_toggle"):
+    st.session_state.sidebar_open = not st.session_state.sidebar_open
+    st.rerun()
+
 # ================= SIDEBAR =================
-with st.sidebar:
-    st.image("assets/logo.png", use_container_width=True)
-    st.markdown("<div style='margin-top: -20px; text-align: center; font-size: 11px; color: #64748b; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;'>Recruitment Intelligence</div>", unsafe_allow_html=True)
-    st.markdown("<hr style='border: 1px solid rgba(255,255,255,0.05); margin-top: 20px; margin-bottom: 20px;'>", unsafe_allow_html=True)
-    st.markdown("<div style='color: #a855f7; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;'>Main Navigation</div>", unsafe_allow_html=True)
-    
-    if st.button("🏠 Home Dashboard", use_container_width=True):
-        st.session_state.page = "home"
-        st.rerun()
-    if st.button("🔍 AI Evaluation", use_container_width=True):
-        st.session_state.page = "eval"
-        st.rerun()
-    if st.button("👥 Internal DB", use_container_width=True):
-        st.session_state.page = "internal"
-        st.rerun()
-    if st.button("📝 AI Interview Questions", use_container_width=True):
-        st.session_state.page = "ai"
-        st.rerun()
-    if st.button("📚 Job Library", use_container_width=True):
-        st.session_state.page = "jd_library"
-        st.rerun()
+if st.session_state.sidebar_open:
+    with st.sidebar:
+        st.image("assets/logo.png", use_container_width=True)
+        st.markdown("<div style='margin-top: -20px; text-align: center; font-size: 11px; color: #64748b; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;'>Recruitment Intelligence</div>", unsafe_allow_html=True)
+        st.markdown("<hr style='border: 1px solid rgba(255,255,255,0.05); margin-top: 20px; margin-bottom: 20px;'>", unsafe_allow_html=True)
+        st.markdown("<div style='color: #a855f7; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;'>Main Navigation</div>", unsafe_allow_html=True)
+
+        if st.button("🏠 Home Dashboard", use_container_width=True):
+            st.session_state.page = "home"
+            st.rerun()
+        if st.button("🔍 AI Evaluation", use_container_width=True):
+            st.session_state.page = "eval"
+            st.rerun()
+        if st.button("👥 Internal DB", use_container_width=True):
+            st.session_state.page = "internal"
+            st.rerun()
+        if st.button("📝 AI Interview Questions", use_container_width=True):
+            st.session_state.page = "ai"
+            st.rerun()
+        if st.button("📚 Job Library", use_container_width=True):
+            st.session_state.page = "jd_library"
+            st.rerun()
 
 
 # ================= STATE =================
@@ -1300,13 +1308,13 @@ if st.session_state.page == "home":
         
         c1, c2, c3 = st.columns(3)
         with c1:
-            if st.button("Smart Evaluation", use_container_width=True):
+            if st.button("AI Evaluation", use_container_width=True):
                 st.session_state.page="eval"; st.rerun()
         with c2:
             if st.button("Internal DB", use_container_width=True):
                 st.session_state.page="internal"; st.rerun()
         with c3:
-            if st.button("Interview Questions", use_container_width=True):
+            if st.button("AI Interview Questions", use_container_width=True):
                 st.session_state.page="ai"; st.rerun()
 
         st.markdown("<hr style='border: 1px solid rgba(255,255,255,0.05); margin: 30px 0;'>", unsafe_allow_html=True)
