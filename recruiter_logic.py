@@ -209,3 +209,10 @@ def analyze_career_growth(resume: str) -> int:
 def analyze_seniority_density(resume: str, jd: str) -> int:
     """Analyze seniority match with job description."""
     return SeniorityAnalyzer.analyze(resume, jd)
+
+
+def get_recruiter_insights(resume: str, jd: str, final_score: float):
+    """Generate recruiter insights based on analysis."""
+    result = RecruiterScoringEngine.evaluate(resume, jd)
+    insights = InsightEngine.generate(result)
+    return insights
